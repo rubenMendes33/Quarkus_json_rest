@@ -25,8 +25,12 @@ public class PopCornResource {
     }
     @POST
     public Set<PopCorn> add(PopCorn popCorn) {
-        popCorns.add(popCorn);
-        return popCorns;
+        if(popCorn.name.length() <=20 || popCorn.description.length()<=20) {
+            popCorns.add(popCorn);
+        }
+            return popCorns;
+
+
     }
 
     @DELETE
